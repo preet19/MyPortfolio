@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= title %></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script   src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js" integrity="sha256-eGE6blurk5sHj+rmkfsGYeKyZx3M4bG+ZlFyA7Kns7E="   crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link rel='stylesheet' href='/stylesheets/bootstrap.min.css' />
+    <link rel='stylesheet' href='/stylesheets/bootstrap-theme.min.css' />
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Shadows+Into+Light' rel='stylesheet' type='text/css'>
+
+
+    <script>
+        $(document).ready(function() {
+            $('.navbar-nav [data-toggle="tooltip"]').tooltip();
+            $('.navbar-twitch-toggle').on('click', function(event) {
+                event.preventDefault();
+                $('.navbar-twitch').toggleClass('open');
+            });
+
+            $('.nav-style-toggle').on('click', function(event) {
+                event.preventDefault();
+                var $current = $('.nav-style-toggle.disabled');
+                $(this).addClass('disabled');
+                $current.removeClass('disabled');
+                $('.navbar-twitch').removeClass('navbar-'+$current.data('type'));
+                $('.navbar-twitch').addClass('navbar-'+$(this).data('type'));
+            });
+        });
+    </script>
+
+</head>
+<body class="stick">
+
+<div class="navbar navbar-inverse navbar-twitch" role="navigation">
+    <div class="container">
+        <div class="">
+            <ul class="nav navbar-nav">
+                <li class="active">
+                    <a href="/">
+						<span class="small-nav" data-toggle="tooltip" data-placement="right" title="Home">
+							<span class="fa fa-home"></span>
+						</span>
+                        <span class="full-nav"> Home  </span>
+
+
+
+                    </a>
+                </li>
+                <li>
+                    <a href="/skills">
+						<span class="small-nav" data-toggle="tooltip" data-placement="right" title="Skills">
+							<span class="fa fa-dollar"></span>
+						</span>
+                        <span class="full-nav"> Skills</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/projects">
+						<span class="small-nav" data-toggle="tooltip" data-placement="right" title="Projects">
+							<span class="fa fa-briefcase"></span>
+						</span>
+                        <span class="full-nav"> Projects </span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/about">
+						<span class="small-nav" data-toggle="tooltip" data-placement="right" title="About Me">
+							<span class="fa fa-code"></span>
+						</span>
+                        <span class="full-nav"> About Me </span>
+                    </a>
+                </li>
+
+
+
+                <li>
+                    <a href="contact">
+						<span class="small-nav" data-toggle="tooltip" data-placement="right" title="Contact Me">
+							<span class="glyphicon glyphicon-comment"></span>
+						</span>
+                        <span class="full-nav"> Contact Me </span>
+                    </a>
+                </li>
+            </ul>
+        </div><!--/.nav-collapse -->
+    </div>
+</div>
+<button type="button" class="btn btn-default btn-xs navbar-twitch-toggle">
+    <span class="glyphicon glyphicon-chevron-right nav-open"></span>
+    <span class="glyphicon glyphicon-chevron-left nav-close"></span>
+</button>
+

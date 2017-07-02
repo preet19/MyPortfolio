@@ -1,0 +1,22 @@
+<% include partials/header.ejs %>
+<!--
+File name = contact
+Author's name = Dilpreet Singh
+Web site name = dilpreet.me
+file description = the page to contact me
+-->
+<form action="" method="post" enctype="multipart/form-data">
+    <fieldset>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" placeholder="Enter your full name" />
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email address" />
+
+        <label for="description">Description:</label>
+        <textarea id="description" name="description" placeholder="Enter your message"></textarea>
+
+        <input type="submit" value="Send Email" />
+    </fieldset>
+</form>
+<% include partials/footer.ejs %>
